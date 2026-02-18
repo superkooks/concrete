@@ -1,0 +1,38 @@
+table ConcreteConfig {
+    partitions:[PartitionConfig];
+}
+
+table PartitionConfig {
+    name:string;
+    virt_sensors:[VirtSensorConfig];
+    keypads:[KeypadConfig];
+    outputs:[OutputConfig];
+}
+
+table VirtSensorConfig {
+    sensor_addr:uint32;
+
+    entry_delay:int32;
+    exit_delay:int32;
+
+    chime_armed:bool;
+    chime_disarmed:bool;
+
+    tamper_armed:bool;
+    tamper_disarmed:bool;
+}
+
+table KeypadConfig {
+    board_addr:uint32;
+    show_armed:bool;
+}
+
+table PhysSensorConfig {
+    addr:uint32;
+    name:string;
+}
+
+table OutputConfig {
+    addr:uint32;
+    name:string;
+}
